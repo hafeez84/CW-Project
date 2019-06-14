@@ -21,7 +21,10 @@ namespace WeatherApp
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string si = ((KeyValuePair<string, string>)comboBoxCities.SelectedItem).Value;
+            //string si = comboBoxCities.Items[comboBoxCities.SelectedIndex].ToString();
+            Console.WriteLine(si);
+            GetData.city_name(si, dataGridViewDays);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,14 +38,14 @@ namespace WeatherApp
         }
 
         private void PutCities(ComboBox box)
-        {
-            citis.Add("London", "london");
-            citis.Add("Istanbul", "istanbul");
-            citis.Add("Ankara", "ankara");
-            citis.Add("Brussels", "brussels");
-            citis.Add("Paris", "paris");
-            citis.Add("Samsun", "samsun");
-            citis.Add("Trabzon", "trabzon");
+        {   // values are woeid taken from metaweather.com
+            citis.Add("London", "44418");
+            citis.Add("Istanbul", "2344116");
+            citis.Add("Ankara", "2343732");
+            citis.Add("Brussels", "968019");
+            citis.Add("Paris", "615702");
+            citis.Add("Copenhagen", "554890");
+            citis.Add("Barcelona", "753692");
 
             box.DataSource = new BindingSource(citis, null);
             box.DisplayMember = "Key";
