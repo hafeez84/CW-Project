@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WeatherApp
@@ -16,25 +12,23 @@ namespace WeatherApp
         public Form1()
         {
             InitializeComponent();
+            this.TopMost = true;
+            this.WindowState = FormWindowState.Maximized;
             PutCities(comboBoxCities);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string si = ((KeyValuePair<string, string>)comboBoxCities.SelectedItem).Value;
-            //string si = comboBoxCities.Items[comboBoxCities.SelectedIndex].ToString();
-            Console.WriteLine(si);
-            GetData.city_name(si, dataGridViewDays);
+            string city = ((KeyValuePair<string, string>)comboBoxCities.SelectedItem).Value;
+            GetData.city_code(city, dataGridViewDays);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            dataGridViewDays.Width = dataGridViewDays.Columns.Cast<DataGridViewColumn>().Sum(x => x.Width)
+                                    +(dataGridViewDays.RowHeadersVisible ? dataGridViewDays.RowHeadersWidth : 0) + dataGridViewDays.Margin.Horizontal;
+            dataGridViewDays.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewDays.Columns[dataGridViewDays.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void PutCities(ComboBox box)

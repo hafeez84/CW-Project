@@ -35,18 +35,24 @@
             // 
             // dataGridViewDays
             // 
-            this.dataGridViewDays.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDays.Location = new System.Drawing.Point(0, 134);
+            this.dataGridViewDays.AllowUserToAddRows = false;
+            this.dataGridViewDays.AllowUserToDeleteRows = false;
+            this.dataGridViewDays.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewDays.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewDays.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewDays.Location = new System.Drawing.Point(-1, 133);
             this.dataGridViewDays.Name = "dataGridViewDays";
+            this.dataGridViewDays.ReadOnly = true;
+            this.dataGridViewDays.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewDays.RowTemplate.Height = 28;
-            this.dataGridViewDays.Size = new System.Drawing.Size(800, 322);
+            this.dataGridViewDays.Size = new System.Drawing.Size(803, 317);
             this.dataGridViewDays.TabIndex = 0;
-            this.dataGridViewDays.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // comboBoxCities
             // 
             this.comboBoxCities.FormattingEnabled = true;
-            this.comboBoxCities.Location = new System.Drawing.Point(196, 79);
+            this.comboBoxCities.Location = new System.Drawing.Point(21, 52);
             this.comboBoxCities.Name = "comboBoxCities";
             this.comboBoxCities.Size = new System.Drawing.Size(451, 28);
             this.comboBoxCities.TabIndex = 1;
